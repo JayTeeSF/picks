@@ -1,0 +1,10 @@
+replace created_at entry on home-page w/ a sparkline!
+
+Move Segment/Industry to a separate model (or models).
+(optionally) route to companies from within a segment/industry
+
+setup the relationship(s) for reporting (i.e. how well-rounded is my
+portfolio)
+
+Add a User model: for authentication as well as for setting up a
+Porfolio model :user_id, :company_id, :basis, :total_number_of_shares

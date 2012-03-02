@@ -1,0 +1,88 @@
+<%= form_for [@company, @fundamentals_history], :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Fundamentals History for <%= @company.name %></legend>
+
+    <!-- TODO hide this first field -->
+    <div class="control-group">
+      <%#= f.label :company_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.hidden_field :company_id, :class => 'number_field', :value => @company.id %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :pe, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :pe, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :industry_pe, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :industry_pe, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :mkt_cap, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :mkt_cap, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :avg_vol, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :avg_vol, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :annualized_dividend, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :annualized_dividend, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :dividend_yield, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :dividend_yield, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :bid, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :bid, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :ask, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :ask, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :fifty_two_wk_high, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fifty_two_wk_high, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :fifty_two_wk_low, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :fifty_two_wk_low, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', company_fundamentals_histories_path(@company), :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

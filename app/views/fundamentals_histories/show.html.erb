@@ -1,0 +1,57 @@
+<h1>Fundamentals History for <%= @company.name %></h1>
+
+<p>
+  <b>Pe</b><br>
+  <%= @fundamentals_history.pe %>
+</p>
+
+<p>
+  <b>Industry pe</b><br>
+  <%= @fundamentals_history.industry_pe %>
+</p>
+
+<p>
+  <b>Mkt cap</b><br>
+  <%= @fundamentals_history.mkt_cap %>
+</p>
+
+<p>
+  <b>Avg vol</b><br>
+  <%= @fundamentals_history.avg_vol %>
+</p>
+
+<p>
+  <b>Annualized dividend</b><br>
+  <%= @fundamentals_history.annualized_dividend %>
+</p>
+
+<p>
+  <b>Dividend Yield</b><br>
+  <%= @fundamentals_history.dividend_yield %>
+</p>
+
+<p>
+  <b>Bid</b><br>
+  <%= @fundamentals_history.bid %>
+</p>
+
+<p>
+  <b>Ask</b><br>
+  <%= @fundamentals_history.ask %>
+</p>
+
+<p>
+  <b>Fifty two wk high</b><br>
+  <%= @fundamentals_history.fifty_two_wk_high %>
+</p>
+
+<p>
+  <b>Fifty two wk low</b><br>
+  <%= @fundamentals_history.fifty_two_wk_low %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', company_fundamentals_histories_path(@company), :class => 'btn'  %>
+  <%= link_to 'Edit', edit_company_fundamentals_history_path(@company, @fundamentals_history), :class => 'btn' %>
+  <%= link_to 'Delete', company_fundamentals_history_path(@company, @fundamentals_history), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

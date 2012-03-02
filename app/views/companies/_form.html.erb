@@ -17,6 +17,20 @@
     </div>
 
     <div class="control-group">
+      <%= f.label :sector, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :sector, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :industry, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :industry, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
       <%= f.label :exchange, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :exchange, :class => 'text_field' %>
@@ -26,14 +40,21 @@
     <div class="control-group">
       <%= f.label :profile, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :profile, :class => 'text_field' %>
+        <%= f.text_area :profile, :class => 'text_area' %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label :investment_blurb, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :investment_blurb, :class => 'text_field' %>
+        <%= f.text_area :investment_blurb, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :big_dividends, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :big_dividends, :class => 'check_box' %>
       </div>
     </div>
 

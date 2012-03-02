@@ -1,0 +1,26 @@
+<h1>Fundamentals Historys</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Company</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fundamentals_histories.each do |fundamentals_history| %>
+      <tr>
+        <td><%= fundamentals_history.id %></td>
+        <td><%= link_to fundamentals_history.company.name, company_fundamentals_history_path(@company, fundamentals_history) %></td>
+        <td><%= fundamentals_history.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_company_fundamentals_history_path(@company, fundamentals_history), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', company_fundamentals_history_path(@company, fundamentals_history), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_company_fundamentals_history_path(@company), :class => 'btn btn-primary' %>

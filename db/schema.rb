@@ -11,16 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302013409) do
+ActiveRecord::Schema.define(:version => 20120302065735) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "symbol"
+    t.string   "sector"
+    t.string   "industry"
     t.string   "exchange"
-    t.string   "profile"
-    t.string   "investment_blurb"
+    t.text     "profile"
+    t.text     "investment_blurb"
+    t.boolean  "big_dividends"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  add_index "companies", ["symbol"], :name => "index_companies_on_symbol", :unique => true
+
+  create_table "fundamentals_histories", :force => true do |t|
+    t.integer  "company_id"
+    t.float    "pe"
+    t.float    "industry_pe"
+    t.float    "mkt_cap"
+    t.float    "avg_vol"
+    t.float    "annualized_dividend"
+    t.float    "dividend_yield"
+    t.float    "bid"
+    t.float    "ask"
+    t.float    "fifty_two_wk_high"
+    t.float    "fifty_two_wk_low"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
 end
