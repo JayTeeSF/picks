@@ -20,7 +20,10 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
+  gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'less'
+  gem 'lessframework-rails'
 end
 
 gem 'jquery-rails'
@@ -39,3 +42,11 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :development do
+  gem "rspec-rails", "~> 2.6"
+  gem "guard"
+  # gem "guard-shell"
+  gem "rb-fsevent", :require  => false
+  gem "growl", :require  => false
+  gem "guard-bundler"
+end

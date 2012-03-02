@@ -1,0 +1,45 @@
+<%= form_for @company, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Company</legend>
+
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :symbol, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :symbol, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :exchange, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :exchange, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :profile, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :profile, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :investment_blurb, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :investment_blurb, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', companies_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
