@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302065735) do
+ActiveRecord::Schema.define(:version => 20120302215032) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "symbol"
-    t.string   "sector"
-    t.string   "industry"
+    t.integer  "industry_id"
     t.string   "exchange"
     t.text     "profile"
     t.text     "investment_blurb"
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120302065735) do
     t.datetime "updated_at",       :null => false
   end
 
+  add_index "companies", ["industry_id"], :name => "index_companies_on_industry_id"
   add_index "companies", ["symbol"], :name => "index_companies_on_symbol", :unique => true
 
   create_table "fundamentals_histories", :force => true do |t|
@@ -40,8 +40,31 @@ ActiveRecord::Schema.define(:version => 20120302065735) do
     t.float    "ask"
     t.float    "fifty_two_wk_high"
     t.float    "fifty_two_wk_low"
+    t.date     "collected_on"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
+
+  add_index "fundamentals_histories", ["company_id", "collected_on"], :name => "index_fundamentals_histories_on_company_id_and_collected_on", :unique => true
+  add_index "fundamentals_histories", ["company_id"], :name => "index_fundamentals_histories_on_company_id"
+
+  create_table "industries", :force => true do |t|
+    t.string   "name"
+    t.integer  "sector_id"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "industries", ["name"], :name => "index_industries_on_name", :unique => true
+
+  create_table "sectors", :force => true do |t|
+    t.string   "name"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sectors", ["name"], :name => "index_sectors_on_name", :unique => true
 
 end

@@ -3,8 +3,7 @@ class CreateCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.string :symbol
-      t.string :sector
-      t.string :industry
+      t.integer :industry_id
       t.string :exchange
       t.text :profile
       t.text :investment_blurb
@@ -12,6 +11,7 @@ class CreateCompanies < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :companies, :industry_id
     add_index :companies, :symbol, :unique => true
   end
 end

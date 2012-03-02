@@ -1,0 +1,26 @@
+<h1>Sectors</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sectors.each do |sector| %>
+      <tr>
+        <td><%= sector.id %></td>
+        <td><%= link_to sector.name, sector_path(sector) %></td>
+        <td><%= sector.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_sector_path(sector), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', sector_path(sector), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_sector_path, :class => 'btn btn-primary' %>

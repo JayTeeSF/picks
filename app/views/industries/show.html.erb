@@ -1,0 +1,22 @@
+<h1>Industry</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @industry.name %>
+</p>
+
+<p>
+  <b>Sector</b><br>
+  <%= @industry.sector_id %>
+</p>
+
+<p>
+  <b>Comment</b><br>
+  <%= @industry.comment %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', industries_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_industry_path(@industry), :class => 'btn' %>
+  <%= link_to 'Delete', industry_path(@industry), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

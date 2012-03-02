@@ -1,9 +1,4 @@
-<h1>Company</h1>
-
-<p>
-  <b>Name</b><br>
-  <%= @company.name %>
-</p>
+<h1><%= @company.name %></h1>
 
 <p>
   <b>Symbol</b><br>
@@ -11,13 +6,8 @@
 </p>
 
 <p>
-  <b>Sector</b><br>
-  <%= @company.sector %>
-</p>
-
-<p>
-  <b>Industry</b><br>
-  <%= @company.industry %>
+  <b>Sector / Industry</b><br>
+  <%= @company.sector_industry_label %>
 </p>
 
 <p>

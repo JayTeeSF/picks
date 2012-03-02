@@ -12,8 +12,11 @@ class CreateFundamentalsHistories < ActiveRecord::Migration
       t.float :ask
       t.float :fifty_two_wk_high
       t.float :fifty_two_wk_low
+      t.date :collected_on
 
       t.timestamps
     end
+    add_index :fundamentals_histories, :company_id
+    add_index :fundamentals_histories, [:company_id, :collected_on], :unique => true
   end
 end
